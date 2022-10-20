@@ -1,0 +1,88 @@
+﻿@model Pageres<Employes>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container p-3">
+    <div class="row pt-4">
+         <div class="col-6">
+             <h2 class="text-primary">List of Employes</h2>
+         </div>
+        <div class="col-6 text-end" style="padding: 2pt">
+             <a asp-controller="Employes" asp-action="Create" class="btn btn-primary">
+              <i class="bi bi-plus-circle"></i> &nbsp; Add employes </a>
+             
+             <form asp-controller="Employes" asp-action="Index" method="get" style="margin-top:5pt">
+    <p>
+        Employes: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+</div>
+     </div>
+
+<table class="table table-bordered table-striped" style="width:100%">
+<thead>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            SurName
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+           Number
+        </th>
+        <th>
+            Workplace
+        </th>
+        <th>
+            Work number
+        </th>
+    </tr>
+</thead>
+
+@foreach (var obj in Model.Items.Items)
+        {
+            <tr>
+                <td width="50%">
+                    @obj.Name
+                </td>
+                <td width="30%">
+                    @obj.SurName
+                </td>
+                 <td width="30%">
+                    @obj.EmailEmp
+                </td>
+                 <td width="30%">
+                    @obj.Number
+                </td>
+                 <td width="30%">
+                    @obj.workplace
+                </td>
+                 <td width="30%">
+                    @obj.workNumber
+                </td>
+            </tr>
+        }
+</table>
+@{
+        var prevDisabled = Model.Items.CurrentPage == 1 ? "disabled" : "";
+        var nextDisabled = Model.Items.PageCount == Model.Items.CurrentPage ?"disabled" : "";
+    }
+<a asp-action="Index"
+   asp-route-pg="@(Model.Items.CurrentPage-1)"
+   asp-route-SearchString="@Model.SearchString"
+   class="btn btn-default @prevDisabled">
+   Previous
+</a>
+
+    <a asp-action="Index"
+   asp-route-pg="@(Model.Items.CurrentPage+1)"
+   asp-route-SearchString="@Model.SearchString"
+   class="btn btn-default @nextDisabled">
+   Next
+</a>
+</div>

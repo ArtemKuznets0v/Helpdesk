@@ -1,0 +1,79 @@
+﻿@model Companys
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+        <h2 class="text-primary">Create Company</h2>
+        <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+    <label asp-for="NameCompany"></label>
+    <input asp-for="NameCompany" class="form-control" />
+    <span asp-validation-for="NameCompany" class="text-danger"></span>
+</div>
+
+    <div class="mb-3">
+    <label asp-for="NIP"></label>
+    <input asp-for="NIP" class="form-control" />
+    <span asp-validation-for="NIP" class="text-danger"></span>
+</div>
+
+
+<div class="mb-3">
+    <label asp-for="City"></label>
+    <input asp-for="City" class="form-control" />
+    <span asp-validation-for="City" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Country"></label>
+    <input asp-for="Country" class="form-control" />
+    <span asp-validation-for="Country" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Street"></label>
+    <input asp-for="Street" class="form-control" />
+    <span asp-validation-for="Street" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="nrOfBuilding"></label>
+    <input asp-for="nrOfBuilding" class="form-control" />
+    <span asp-validation-for="nrOfBuilding" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="nrApartments"></label>
+    <input asp-for="nrApartments" class="form-control" />
+    <span asp-validation-for="nrApartments" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="krs"></label>
+    <input asp-for="krs" class="form-control" />
+    <span asp-validation-for="krs" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="domains"></label>
+    <input asp-for="domains" class="form-control" />
+    <span asp-validation-for="domains" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="regon"></label>
+    <input asp-for="regon" class="form-control" />
+    <span asp-validation-for="regon" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="WebAdres"></label>
+    <input asp-for="WebAdres" class="form-control" />
+    <span asp-validation-for="WebAdres" class="text-danger"></span>
+</div>
+<button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+<a asp-controller="Comp" asp-action="Index" class="btn btn-secondary" style="width:150px">
+    Back to List
+</a>
+
+</div>
+
+</form>

@@ -1,0 +1,50 @@
+﻿@model Employes
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+        <h2 class="text-primary">Create Employes</h2>
+        <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="SurName"></label>
+    <input asp-for="SurName" class="form-control" />
+    <span asp-validation-for="SurName" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="EmailEmp"></label>
+    <input asp-for="EmailEmp" class="form-control" />
+    <span asp-validation-for="EmailEmp" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Number"></label>
+    <input asp-for="Number" class="form-control" />
+    <span asp-validation-for="Number" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="workplace"></label>
+    <input asp-for="workplace" class="form-control" />
+    <span asp-validation-for="workplace" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="workNumber"></label>
+    <input asp-for="workNumber" class="form-control" />
+    <span asp-validation-for="workNumber" class="text-danger"></span>
+</div>
+
+<button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+<a asp-controller="Employes" asp-action="Index" class="btn btn-secondary" style="width:150px">
+    Back to List
+</a>
+
+</div>
+
+</form>

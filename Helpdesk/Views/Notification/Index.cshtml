@@ -1,0 +1,72 @@
+﻿@model  IEnumerable<Notification>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container p-3">
+    <div class="row pt-4">
+         <div class="col-6">
+             <h2 class="text-primary">Notification list</h2>
+         </div>
+        <div class="col-6 text-end" style="padding: 2pt">
+             <a asp-controller="Notification" asp-action="Create" class="btn btn-primary">
+              <i class="bi bi-plus-circle"></i> &nbsp; Add new notification </a>
+             
+             <form asp-controller="Notification" asp-action="Index" method="get" style="margin-top:5pt">
+</form>
+</div>
+     </div>
+     <table class="table table-bordered table-striped" style="width:100%">
+<thead>
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Message
+        </th>
+        <th>
+            Priority
+        </th>
+        <th>
+            Date Of Registration
+        </th>
+        <th>
+            Source
+        </th>
+        <th>
+            Deadline
+        </th>
+         <th>
+            Status
+        </th>
+        </tr>
+</thead>
+@foreach (var obj in Model)
+        {
+            <tr>
+                <td width="50%">
+                    @obj.Title
+                </td>
+                <td width="30%">
+                    @obj.Message
+                </td>
+                 <td width="30%">
+                    @obj.Priority
+                </td>
+                 <td width="30%">
+                    @obj.DateOfRegistration
+                </td>
+                 <td width="30%">
+                    @obj.Source
+                </td>
+                 <td width="30%">
+                    @obj.Deadline
+                </td>
+                 <td width="30%">
+                    @obj.Status
+                </td>
+            </tr>
+        }
+</table>
+</div>

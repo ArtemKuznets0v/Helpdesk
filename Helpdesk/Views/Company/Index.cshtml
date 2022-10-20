@@ -1,0 +1,119 @@
+﻿
+@model Pageres<Companys>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container p-3">
+    <div class="row pt-4">
+         <div class="col-6">
+             <h2 class="text-primary">List Company</h2>
+         </div>
+        <div class="col-6 text-end" style="padding: 2pt">
+             <a asp-controller="Company" asp-action="Create" class="btn btn-primary">
+              <i class="bi bi-plus-circle"></i> &nbsp; Add new company </a>
+             
+             <form asp-controller="Company" asp-action="Index" method="get" style="margin-top:5pt">
+    <p>
+       Companys: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+</div>
+     </div>
+
+<table class="table table-bordered table-striped" style="width:100%">
+<thead>
+    <tr>
+        <th>
+            Name of Company
+        </th>
+        <th>
+            Nip
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+            Street
+        </th>
+        <th>
+            
+        Number of the building
+        </th>
+        <th>
+            Apartment number
+        </th>
+        <th>
+            Domen
+        </th>
+        <th>
+            Regon
+        </th>
+        <th>
+            Krs
+        </th>
+        <th>
+            Web addres
+        </th>
+    </tr>
+</thead>
+@foreach (var obj in Model.Items.Items)
+        {
+            <tr>
+                <td width="50%">
+                    @obj.NameCompany
+                </td>
+                <td width="30%">
+                    @obj.NIP
+                </td>
+                 <td width="30%">
+                    @obj.City
+                </td>
+                 <td width="30%">
+                    @obj.Country
+                </td>
+                 <td width="30%">
+                    @obj.Street
+                </td>
+                 <td width="30%">
+                    @obj.nrOfBuilding
+                </td>
+                <td width="30%">
+                    @obj.nrApartments
+                </td>
+                <td width="30%">
+                    @obj.domains
+                </td>
+                <td width="30%">
+                    @obj.regon
+                </td>
+                <td width="30%">
+                    @obj.krs
+                </td>
+                <td width="30%">
+                    @obj.WebAdres
+                </td>
+            </tr>
+        }
+</table>
+    @{
+        var prevDisabled = Model.Items.CurrentPage == 1 ? "disabled" : "";
+        var nextDisabled = Model.Items.PageCount == Model.Items.CurrentPage ?"disabled" : "";
+    }
+<a asp-action="Index"
+   asp-route-pg="@(Model.Items.CurrentPage-1)"
+   asp-route-SearchString="@Model.SearchString"
+   class="btn btn-default @prevDisabled">
+   Previous
+</a>
+
+    <a asp-action="Index"
+   asp-route-pg="@(Model.Items.CurrentPage+1)"
+   asp-route-SearchString="@Model.SearchString"
+   class="btn btn-default @nextDisabled">
+   Next
+</a>
+</div>

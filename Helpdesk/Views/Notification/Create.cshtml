@@ -1,0 +1,54 @@
+﻿@model Notification
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+        <h2 class="text-primary">Add notification</h2>
+        <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+    <label asp-for="Title"></label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Message"></label>
+    <input asp-for="Message" class="form-control" />
+    <span asp-validation-for="Message" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Priority"></label>
+    <input asp-for="Priority" class="form-control" />
+    <span asp-validation-for="Priority" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="DateOfRegistration"></label>
+    <input asp-for="DateOfRegistration" class="form-control" />
+    <span asp-validation-for="DateOfRegistration" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Source"></label>
+    <input asp-for="Source" class="form-control" />
+    <span asp-validation-for="Source" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Deadline"></label>
+    <input asp-for="Deadline" class="form-control" />
+    <span asp-validation-for="Deadline" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="Status"></label>
+    <input asp-for="Status" class="form-control" />
+    <span asp-validation-for="Status" class="text-danger"></span>
+</div>
+
+<button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+<a asp-controller="Notification" asp-action="Index" class="btn btn-secondary" style="width:150px">
+    Back to List
+</a>
+
+</div>
+
+</form>

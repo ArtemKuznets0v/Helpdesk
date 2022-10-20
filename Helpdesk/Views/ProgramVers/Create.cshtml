@@ -1,0 +1,34 @@
+﻿@model Vers
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+        <h2 class="text-primary">Add version</h2>
+        <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+    <label asp-for="name"></label>
+    <input asp-for="name" class="form-control" />
+    <span asp-validation-for="name" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="IsArchive"></label>
+    <input asp-for="IsArchive" class="form-control"  />
+    <span asp-validation-for="IsArchive" class="text-danger"></span>
+</div>
+<div class="mb-3">
+    <label asp-for="IsDeperecated"></label>
+    <input asp-for="IsDeperecated" class="form-control"  />
+    <span asp-validation-for="IsDeperecated" class="text-danger"></span>
+</div>
+
+<button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+<a asp-controller="Vers" asp-action="Index" class="btn btn-secondary" style="width:150px">
+    Back to List
+</a>
+
+</div>
+
+</form>
