@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\images\aspLogo.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Views\Home\Index.cshtml" />
     <None Include="wwwroot\js\anime.min.js" />
     <None Include="wwwroot\js\app.js" />

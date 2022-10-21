@@ -228,14 +228,15 @@ text-align: center;
     background: #f5f5f5;
 
 }
-.skills .content .skillsBx:hover{
-    background: black;
-}
+    .skills .content .skillsBx:hover {
+        background: #b3b2b1;
+    }
 .skills .content .skillsBx img{
     width: 80px;
-    max-width: 80 px;
+    height: 80px;
+    max-width: 80px;
     transition: 0.5s;
-    background-color: white;
+/*    background-color: white;*/
 }
 /* .skills .content .skillsBx:hover img{
     filter: invert(1);
@@ -446,7 +447,7 @@ text-align: center;
   html,
   body {
     height: 100vh;
-    background-color: white;
+    /*background-color: white;*/
   }
   .banner .container{
     position: relative;

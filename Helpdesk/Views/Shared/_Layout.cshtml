@@ -6,9 +6,11 @@
     <title>@ViewData["Title"] - Helpdesk</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="icon" href="~/favicon.ico">
+
     
-        @RenderSection("JavaScript", required: false)
-        @RenderSection("Styles", false);
+        @*@RenderSection("JavaScript", required: false)*@
+        @RenderSection("Styles", false)
 
 </head>
 <body>
@@ -58,14 +60,17 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+@*    <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - Helpdesk - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </footer>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/app.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    @await RenderSectionAsync("JavaScript", required: false)
+    
 </body>
 </html>
